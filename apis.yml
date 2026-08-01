@@ -1,7 +1,25 @@
 aid: pitchme
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/pitchme.png
 name: PitchMe
-description: PitchMe is a company surfaced as a portfolio company of techstars and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: PitchMe is a recruitment data intelligence platform that enriches, verifies,
+  and deduplicates candidate records to turn an existing ATS or CRM database into an
+  activated talent pool. It cleans and appends verified contact details, employment
+  history, and skills data, then surfaces career-intelligence signals that power AI-driven
+  sourcing and outreach. PitchMe connects to applicant tracking systems such as Bullhorn,
+  Greenhouse, Salesforce, Lever, JobDiva, Vincere, Avionte, Jobvite, and Ashby via native
+  and certified integrations, plus a custom API for connecting any ATS or recruitment
+  platform. Backed by Techstars.
 url: https://raw.githubusercontent.com/api-evangelist/pitchme/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +29,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Recruitment
+- Data Enrichment
+- Talent Intelligence
+- HR Tech
+- Candidate Data
+- ATS Integration
+- Sourcing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +46,18 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/pitchme-domain-security.yml
 - type: Website
   url: https://pitchme.co/
+- type: Blog
+  url: https://blog.pitchme.co/
+- type: Support
+  url: https://pitchme.co/contact-us
+- type: PrivacyPolicy
+  url: https://pitchme.co/Privacy%20policy.pdf
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  pass: local-v1
+  artifacts_added: 1

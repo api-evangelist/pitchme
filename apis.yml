@@ -29,7 +29,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-14'
 tags:
 - Company
 - Recruitment
@@ -39,7 +39,25 @@ tags:
 - Candidate Data
 - ATS Integration
 - Sourcing
-apis: []
+apis:
+- name: PitchMe API
+  description: >-
+    PitchMe advertises a "Custom Integration via API" for connecting any ATS or
+    recruitment platform not covered by its native marketplace connectors. As of
+    2026-08-14 the company publishes no developer portal, no API reference, no
+    machine-readable contract and no base URL; the only public entry point is a
+    "DISCUSS CUSTOM INTEGRATION" sales CTA on the integrations page. api.pitchme.co
+    resolves and fronts a live application, but every anonymous path returns 404, and
+    PitchMe's own docs never name a base URL — so baseURL is deliberately left unset
+    rather than guessed from the domain.
+  humanURL: https://pitchme.co/integrations
+  baseURL: ''
+  x-base-url-status: missing
+  x-base-url-note: >-
+    No PitchMe source (website, blog, marketplace listing, or any /.well-known
+    document) states an API base URL. api.pitchme.co was observed live but is
+    unconfirmed as the customer-facing base.
+  properties: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -56,8 +74,39 @@ common:
   url: https://pitchme.co/contact-us
 - type: PrivacyPolicy
   url: https://pitchme.co/Privacy%20policy.pdf
+- type: BlogRSS
+  url: https://blog.pitchme.co/feed
+- type: LLMsTxt
+  url: llms/pitchme-llms.txt
+- type: Conformance
+  url: conformance/pitchme-conformance.yml
+- type: Compliance
+  url: https://pitchme.co/integrations
+- type: Plans
+  url: plans/pitchme-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/pitchme-rate-limits.yml
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-14'
   status: minimal
+  artifacts_added: 7
   pass: local-v1
-  artifacts_added: 1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    PitchMe's only public mention of its API is an "API Access / Custom Integration
+    via API" panel on pitchme.co/integrations whose sole call to action is "DISCUSS
+    CUSTOM INTEGRATION" — there is no developer portal (docs./developers./developer.
+    pitchme.co do not resolve), no API reference, no sign-up, and no pricing page, so
+    the contract sits entirely behind a demo booking.
+  evidence:
+  - url: https://pitchme.co/integrations
+    status: 200
+  - url: https://api.pitchme.co/openapi.json
+    status: 404
+  - url: https://pitchme.co/pricing
+    status: 404
+  - url: https://pitchme.co/.well-known/agent-card.json
+    status: 404
+  checked: '2026-08-14'

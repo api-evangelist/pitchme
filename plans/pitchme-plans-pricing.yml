@@ -1,0 +1,17 @@
+generated: '2026-08-14'
+method: searched
+source: https://pitchme.co/contact-us
+plan_count: 0
+plans: []
+note: >-
+  PitchMe publishes no pricing page and no plan tiers. https://pitchme.co/pricing
+  returns 404 and the sitemap (pitchme.co/sitemap-0.xml) lists only seven URLs, none
+  of them pricing. The contact page states the model plainly: "Want to see PitchMe in
+  action or talk through pricing and plans? Book a 30-minute demo with our team."
+  Pricing is therefore sales-gated in full — there is no published list price, no
+  quota, no overage schedule, and no self-serve sign-up. A /roi-calculator page
+  exists but models placement value, not PitchMe's own price.
+evidence:
+- {url: 'https://pitchme.co/pricing', status: 404}
+- {url: 'https://pitchme.co/contact-us', status: 200}
+- {url: 'https://pitchme.co/sitemap-0.xml', status: 200}

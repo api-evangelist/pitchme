@@ -1,0 +1,24 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  Registry searches (npm registry search API, PyPI JSON API) plus a GitHub user/org
+  search for "pitchme" and a read of pitchme.co/integrations, which is the only page
+  on the site that mentions API access.
+package_count: 0
+packages: []
+registries_checked:
+- {registry: npm, query: pitchme, result: 'no first-party package (0 results in the npm search API)'}
+- {registry: pypi, query: pitchme, result: 'https://pypi.org/pypi/pitchme/json returned 404'}
+- registry: github
+  query: pitchme
+  result: >-
+    no PitchMe-owned organization found; the GitHub accounts matching "pitchme"
+    (pitchMe-org, pitchMe-co, PitchMe-App, pitchme) return zero public repositories
+    and none link to pitchme.co
+note: >-
+  PitchMe ships no first-party client library on any public registry. The company's
+  integration model is native ATS connectors (Bullhorn, Greenhouse, JobDiva, Lever,
+  Salesforce, Vincere, Avionte, Jobvite, Ashby, LaborEdge Nexus) plus a "Custom
+  Integration via API" that is obtained through a sales conversation, so there is no
+  public SDK surface to catalog. No `SDKs` pointer is emitted in apis.yml — an
+  official client library count of zero must not be credited as one.

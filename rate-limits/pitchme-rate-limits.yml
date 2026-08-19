@@ -1,0 +1,19 @@
+generated: '2026-08-14'
+method: searched
+source: https://pitchme.co/integrations
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No rate limits are published. PitchMe has no developer portal, no API reference and
+  no documentation host — docs.pitchme.co, developers.pitchme.co and
+  developer.pitchme.co do not resolve — so there is nowhere a limit could be
+  documented. The only public mention of the API is the "API Access / Custom
+  Integration via API" panel on pitchme.co/integrations, which links to a sales CTA
+  rather than to docs. No response headers could be observed either: api.pitchme.co
+  returns 404 for every anonymous path probed, so no live rate-limit header
+  (X-RateLimit-*, RateLimit-*, Retry-After) was ever emitted to record.
+evidence:
+- {url: 'https://pitchme.co/integrations', status: 200}
+- {url: 'https://docs.pitchme.co/', status: 'DNS: no A record'}
+- {url: 'https://api.pitchme.co/api/v1', status: 404}

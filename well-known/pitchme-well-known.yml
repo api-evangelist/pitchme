@@ -1,0 +1,42 @@
+generated: '2026-08-14'
+method: probed
+source: live GET of the /.well-known/ discovery surface on every PitchMe host we could identify
+note: >-
+  Every probed path returned 404 on every host. pitchme.co answers 404 with the
+  full marketing-site HTML shell (226,900 bytes) rather than a document, so no
+  path here is a hit. api.pitchme.co answers with an nginx 404 for /.well-known/*
+  and a Flask/Werkzeug 404 for /api*, which confirms a live application behind the
+  host but no anonymous discovery surface. NO WellKnown / SecurityTxt pointer is
+  emitted in apis.yml — this file records an absence, not a presence.
+hosts:
+- host: https://pitchme.co
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 404}
+  - {path: /openapi.json, status: 404}
+- host: https://api.pitchme.co
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /openapi.json, status: 404}
+  - {path: /openapi.yaml, status: 404}
+  - {path: /swagger.json, status: 404}
+  - {path: /v1/openapi.json, status: 404}
+  - {path: /api-docs, status: 404}
+  - {path: /docs, status: 404}
+  - {path: /redoc, status: 404}
+  - {path: /graphql, status: 404}
+- host: https://support.pitchme.co
+  documents:
+  - {path: /llms.txt, status: 404}
+  - {path: /sitemap.xml, status: 200, note: 'HubSpot-hosted knowledge base; sitemap is an empty <urlset/> — no published articles'}
+documents_found: 0

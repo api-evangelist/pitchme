@@ -1,0 +1,25 @@
+generated: '2026-08-14'
+method: searched
+status: none
+source: >-
+  https://blog.pitchme.co/building-the-data-layer-for-the-agentic-era (PitchMe's own
+  blog, where the company states MCP servers are something it is "investing in"),
+  plus live probes of mcp.pitchme.co (DNS NXDOMAIN) and api.pitchme.co (nginx 404 on
+  every path probed).
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+tools: []
+note: >-
+  No MCP server is published today, and none can be derived: there is no OpenAPI in
+  this repo to project candidate tools from. PitchMe states the intent publicly —
+  "investing in an open API for integration and MCP servers that let customers
+  connect PitchMe directly into their own custom agents" — so this file records a
+  stated roadmap item, not a shipped surface. NO MCPServer pointer is emitted in
+  apis.yml; a declared intention is not an agent surface. Re-probe
+  https://mcp.pitchme.co/ and https://api.pitchme.co/mcp on the next round.
+evidence:
+- {url: 'https://mcp.pitchme.co/', status: 'DNS: no A record'}
+- {url: 'https://api.pitchme.co/openapi.json', status: 404}
+- {url: 'https://blog.pitchme.co/building-the-data-layer-for-the-agentic-era', status: 200}
